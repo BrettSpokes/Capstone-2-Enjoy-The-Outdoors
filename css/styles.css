@@ -7,6 +7,10 @@ footer p {
     font-style: normal;
 }
 
+body::-webkit-scrollbar {
+    display: none;
+}
+
 body,
 footer {
     background-color: #6eb192;
@@ -24,7 +28,6 @@ footer {
 .nav-link {
     color: #16563b !important;
 }
-
 
 .carousel-inner {
     position: relative;
@@ -44,8 +47,6 @@ footer {
     height: 26.65em;
     object-fit: cover;
 }
-
-
 
 .card {
     border: none;
@@ -78,17 +79,18 @@ footer {
     align-items: center;
 }
 
-
 main>.container {
     padding: 60px 15px 0;
     margin-bottom: 5rem;
 }
 
-.sticky-footer {
-    position: sticky;
-    left: 0;
-    bottom: 0;
-    width: 100%;
+.mountain-main {
+    background-color: rgb(245, 240, 226); /* Translucent beige background */
+    padding: 20px; /* Padding on the sides */
+    min-height: 60vh; /* Minimum height */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    margin: 20px; /* Optional: Add margin for spacing around the main section */
+    border-radius: 75px;
 }
 
 footer a {
@@ -104,6 +106,10 @@ footer a:visited {
 
 .btn {
     width: 125px;
+}
+
+.img-pad{
+    padding-bottom: 30px;
 }
 
 @media (max-width: 765px) {
@@ -175,7 +181,35 @@ footer a:visited {
     /* Add shadowing */
 }
 
-
 .carousel-text {
     font-size: 1.5em;
+}
+
+.sticky-footer {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}
+
+.green-capsule {
+    background-color: #16563b;
+    border-radius: 25px;
+    padding: 10px 20px;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.green-capsule label {
+    display: block;
+}
+
+.green-capsule select {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 15px;
+    padding: 5px 10px;
+}
+
+.navbar-second .navbar-nav, .navbar-title .navbar-brand  {
+    margin-left: 30px;
 }

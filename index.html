@@ -12,7 +12,8 @@
 </head>
 
 <body class="d-flex flex-column min-vh-100 bg-body">
-    <main>
+    <header>
+
         <!-- Navbar 1 (Title) -->
         <nav class="navbar navbar-expand-lg navbar-dark navbar-title">
             <div class="container">
@@ -30,7 +31,6 @@
                 <div class="row w-100 justify-content-center">
                     <div class="col-lg-6 text-center">
                         <ul class="navbar-nav d-flex justify-content-center flex-wrap align-items-center">
-                            <!-- Replaced anchor tags with divs -->
                             <li>
                                 <div class="btn rounded-button">Home</div>
                                 <div class="btn rounded-button">Mountains</div>
@@ -42,61 +42,69 @@
             </div>
         </nav>
 
-        <!-- Carousel -->
-        <div id="natureCarousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                 <!-- New div for overlay -->
-                <div class="carousel-item active">
-                    <div class="overlay"></div>
-                    <img src="imgs/bannerlarge_optimized.png" class="d-block w-100" alt="Nature Scene">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5 id="carousel-text">Welcome to your next outdoor adventure!</h5>
-                    </div>
-                </div>
-            </div>
-        </div>
+    </header>
 
-        <!-- Cards Section -->
-        <div class="container mt-5 flex-grow-1 ">
-            <div class="row">
-                <div class="col-md-3 d-flex align-items-stretch">
-                    <div class="card text-center flex-fill">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Home and Gardens</h5>
-                            <p class="card-text">Explore beautiful gardens and home decorations inspired by nature.</p>
-                            <a href="#" class="btn btn-primary mt-auto">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 d-flex align-items-stretch">
-                    <div class="card text-center flex-fill">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Camping Tips</h5>
-                            <p class="card-text">Get the best tips for camping and enjoy your outdoor adventures.</p>
-                            <a href="#" class="btn btn-primary mt-auto">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 d-flex align-items-stretch">
-                    <div class="card text-center flex-fill">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Wildlife</h5>
-                            <p class="card-text">Discover the diverse wildlife in various natural habitats.</p>
-                            <a href="#" class="btn btn-primary mt-auto">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 d-flex align-items-stretch">
-                    <div class="card text-center flex-fill">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Conservation</h5>
-                            <p class="card-text">Learn about conservation efforts and how you can contribute.</p>
-                            <a href="#" class="btn btn-primary mt-auto">Learn More</a>
+    <main>
+        <section>
+            <!-- Carousel -->
+            <div id="natureCarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <!-- New div for overlay -->
+                    <div class="carousel-item active">
+                        <div class="overlay"></div>
+                        <img src="imgs/bannerlarge_optimized.png" class="d-block w-100" alt="Nature Scene">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5 id="carousel-text">Welcome to your next outdoor adventure!</h5>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+        <!-- Cards Section -->
+        <section>
+            <div class="container mt-5 flex-grow-1 ">
+                <div class="row">
+                    <div class="col-md-3 d-flex align-items-stretch">
+                        <div class="card text-center flex-fill">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Home and Gardens</h5>
+                                <p class="card-text">Explore beautiful gardens and home decorations inspired by nature.
+                                </p>
+                                <a href="#" class="btn btn-primary mt-auto">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 d-flex align-items-stretch">
+                        <div class="card text-center flex-fill">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Camping Tips</h5>
+                                <p class="card-text">Get the best tips for camping and enjoy your outdoor adventures.
+                                </p>
+                                <a href="#" class="btn btn-primary mt-auto">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 d-flex align-items-stretch">
+                        <div class="card text-center flex-fill">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Wildlife</h5>
+                                <p class="card-text">Discover the diverse wildlife in various natural habitats.</p>
+                                <a href="#" class="btn btn-primary mt-auto">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 d-flex align-items-stretch">
+                        <div class="card text-center flex-fill">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Conservation</h5>
+                                <p class="card-text">Learn about conservation efforts and how you can contribute.</p>
+                                <a href="#" class="btn btn-primary mt-auto">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <!-- Footer -->
     <footer class="footer-gradient text-white text-center py-3 mt-5 bg-footer">
