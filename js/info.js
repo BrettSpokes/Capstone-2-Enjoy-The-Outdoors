@@ -42,8 +42,10 @@ MOUNTAINSEARCH.addEventListener("change", function () {
                 <p>Elevation: ${foundMountain.elevation}</p>
                 <p>Difficulty: ${foundMountain.effort}</p>
                 <p>Sunrise and Sunset (UTC): ${mountainSunInfo.sunrise} & ${mountainSunInfo.sunset}</p>
-                <img src="imgs/${foundMountain.img}" alt="${foundMountain.name}">
-                <div class="img-pad"></div>`;
+                <div class="d-flex justify-content-center">
+                <img src="imgs/${foundMountain.img}" alt="${foundMountain.name}" class='drop-shadow-img'">
+                </div>
+                <div class="img-pad "></div>`;
         }).catch(error => {
             INFOBLOCK.innerHTML = `<p>Error loading data. Please try again later.</p>`;
             console.error('Error fetching sunset data:', error);
