@@ -56,14 +56,19 @@ function displayListElements(type) {
     const lsc = document.getElementById('locationSearchContainer');
     const ptsc = document.getElementById('parkTypeSearchContainer');
     const prl = document.getElementById('parkResultList');
+    const ht = document.getElementById('helpText');
+
+    INFOBLOCK.innerHTML = ``;
 
     switch (type) {
         case "state":
+            ht.innerText = "Please use the dropdown to find your park";
             lsc.style.display = "";
             prl.style.display = "";
             ptsc.style.display = "none";
             break;
         case "category":
+            ht.innerText = "Please use the dropdown to find your park";
             lsc.style.display = "none";
             ptsc.style.display = "";
             prl.style.display = "";
@@ -80,39 +85,7 @@ document.getElementById("locationSearch").addEventListener("change", function ()
     if (this.value) {
         const selectedValue = this.value;
         let foundparks = selectedValue === 'all' ? nationalParksArray : nationalParksArray.filter(park => park.State == selectedValue);
-        INFOBLOCK.innerHTML = ``;
-        let infoHtml = '';
-
-        foundparks.forEach(foundpark => {
-            if (foundpark.Visit) {
-                infoHtml +=
-                    `<h2>${foundpark.LocationName}</h1>
-            <p>${foundpark.LocationID}</p>
-            <p>${foundpark.Address}</p>
-            <p>${foundpark.City}</p>
-            <div id="visitButton" class="d-flex">
-                <a class="btn btn-primary" href="${foundpark.Visit}">
-                Visit Park Page!
-                </a>
-            </div>
-            <hr class="hrlarge">`;
-            }
-            else {
-                infoHtml +=
-                    `<h2>${foundpark.LocationName}</h1>
-            <p>${foundpark.LocationID}</p>
-            <p>${foundpark.Address}</p>
-            <p>${foundpark.City}</p>
-            <hr class="hrlarge">`;
-            }
-        });
-
-        // Remove the last <hr class="hrlarge">
-        if (infoHtml.endsWith('<hr class="hrlarge">')) {
-            infoHtml = infoHtml.slice(0, -20); // length of '<hr class="hrlarge">'
-        }
-
-        INFOBLOCK.innerHTML = infoHtml;
+        populateList(foundparks);
     }
     else {
         INFOBLOCK.innerHTML = ``;
@@ -126,32 +99,7 @@ document.getElementById("parkTypeSearch").addEventListener("change", function ()
         const selectedValue = this.value;
 
         let foundparks = selectedValue === 'all' ? nationalParksArray : nationalParksArray.filter(park => park.LocationName.includes(selectedValue));
-
-        console.log(foundparks);
-        INFOBLOCK.innerHTML = ``;
-
-        foundparks.forEach(foundpark => {
-            if (foundpark.Visit) {
-                INFOBLOCK.innerHTML +=
-                    `<h2>${foundpark.LocationName}</h1>
-            <p>${foundpark.LocationID}</p>
-            <p>${foundpark.Address}</p>
-            <p>${foundpark.City}</p>
-            <div id="visitButton" class="d-flex">
-                <a class="btn btn-primary" href="${foundpark.Visit}">
-                Visit Park Page!
-                </a>
-            </div>`;
-            }
-            else {
-                INFOBLOCK.innerHTML +=
-                    `<h2>${foundpark.LocationName}</h1>
-            <p>${foundpark.LocationID}</p>
-            <p>${foundpark.Address}</p>
-            <p>${foundpark.City}</p>`;
-            }
-        });
-
+        populateList(foundparks);
     }
     else {
         INFOBLOCK.innerHTML = ``;
@@ -159,3 +107,49 @@ document.getElementById("parkTypeSearch").addEventListener("change", function ()
 
     LOCATIONSEARCH.value = '';
 });
+
+function populateList(inArray){
+
+    INFOBLOCK.innerHTML = ``;
+        let infoHtml = '';
+
+        inArray.forEach(foundpark => {
+            if (foundpark.Visit) {
+                infoHtml +=
+                    `<h2 class="card-title">${foundpark.LocationName}</h2>
+            <p>Park ID: ${foundpark.LocationID}</p>
+            <span>Address: ${foundpark.Address}</span>
+            <span>${foundpark.City},</span>
+            <span>${foundpark.State}</span>
+            <span>${foundpark.ZipCode}</span><br>
+            <span>Phone:${foundpark.Phone}</span><br>
+            <span>Fax:${foundpark.Fax}</span>
+            <div id="visitButton" class="d-flex justify-content-center">
+                <a class="btn mt-auto link-btn" href="${foundpark.Visit}">
+                Visit Park Page!
+                </a>
+            </div>
+            <hr class="hrlarge">`;
+            }
+            else {
+                infoHtml +=
+                    `<h2 class="card-title">${foundpark.LocationName}</h2>
+            <p>Park ID: ${foundpark.LocationID}</p>
+            <span>Address: ${foundpark.Address}</span>
+            <span>${foundpark.City}</span>
+            <span>${foundpark.State}</span>
+            <span>${foundpark.ZipCode}</span><br>
+            <span>Phone: ${foundpark.Phone}</span><br>
+            <span>Fax: ${foundpark.Fax}</span>
+            <hr class="hrlarge">`;
+            }
+        });
+
+        // Remove the last <hr class="hrlarge">
+        if (infoHtml.endsWith('<hr class="hrlarge">')) {
+            infoHtml = infoHtml.slice(0, -20); // length of '<hr class="hrlarge">'
+        }
+
+        INFOBLOCK.innerHTML = infoHtml;
+
+}

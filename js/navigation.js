@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const phrases = [
         'Welcome to your next outdoor adventure!',
         'Discover the majestic mountains - check out our Mountains page!',
-        'Explore the beauty of nature in our Parks section!'
+        'Explore the beauty of nature on our Parks page!'
     ];
     let currentIndex = 0;
     const carouselText = document.getElementById('carousel-text');

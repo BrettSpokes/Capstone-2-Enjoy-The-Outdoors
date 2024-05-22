@@ -49,6 +49,7 @@ footer {
     object-fit: cover;
 }
 
+
 .card {
     border: none;
     transition: transform 0.2s;
@@ -69,8 +70,15 @@ footer {
 .card-title,
 .card-text {
     font-size: 1.1;
-    color: #1f6e41;
     /* Set text color */
+}
+
+.card-title{
+    color: #1f6e41;
+}
+
+.card-text {
+    color: #1f6e41b7;
 }
 
 .card-body {
@@ -116,13 +124,31 @@ footer a {
 }
 
 footer a:hover,
-footer a:visited {
-    color: #617991;
+footer a:visited,
+footer a:active,
+footer a:focus {
+    color: #fff;
     text-decoration: none;
 }
 
 .btn {
     width: 125px;
+}
+
+.link-btn {
+    background-color: #1f6e41;
+    color: #fff;
+    
+    border-color: #e0dac6;
+    border-width: 1px;
+
+}
+
+.link-btn:hover {
+    background-color: #16563b;
+    border-color: #e0dac6;
+    color: #aaa;
+    /* Darker shade of green on hover */
 }
 
 .img-pad {
@@ -134,12 +160,13 @@ footer a:visited {
         width: 250px;
     }
 
-    .rounded-button-green{
+    .rounded-button-green {
         width: 150px;
     }
 }
 
-.btn.rounded-button, .btn.rounded-button-green {
+.btn.rounded-button,
+.btn.rounded-button-green {
     border: none;
     border-radius: 20px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -148,12 +175,12 @@ footer a:visited {
 
 .btn.rounded-button {
     background-color: #f7f0e0;
-    color: #16563b !important;
+    color: #16563b ;
 }
 
 .btn.rounded-button-green {
     background-color: #16563b;
-    color: #fff !important;
+    color: #fff ;
 }
 
 .btn.rounded-button:hover {
@@ -162,7 +189,7 @@ footer a:visited {
 
 .btn.rounded-button-green:hover {
     background-color: rgb(15, 61, 43);
-    color: #fff !important;
+    color: #fff ;
 }
 
 hr.hrlarge {
@@ -170,7 +197,7 @@ hr.hrlarge {
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.35);
     border-radius: 10px;
     width: 100%;
-  }
+}
 
 .navbar-second {
     background: linear-gradient(to bottom, #16563b, #6eb192);
@@ -201,8 +228,9 @@ hr.hrlarge {
 .navbar-brand {
     text-decoration: none;
     /* Remove default underline */
-    -webkit-text-stroke: 1px #223827;
+    -webkit-text-stroke: 1px hsl(188, 33%, 38%);
     /* Add outline using -webkit-text-stroke */
+    text-shadow: 0px 2px 2px rgba(64, 158, 106, 0.9);
     padding: 5px 10px;
     /* Add padding for better appearance */
 }
@@ -210,15 +238,8 @@ hr.hrlarge {
 .navbar-brand {
     font-size: 2.5em;
     color: #f7f0e0 !important;
-    /* Set color for the anchor element */
-    text-decoration: none;
-    /* Remove default underline */
     -webkit-text-stroke: 1px #18752c;
-    /* Add outline using -webkit-text-stroke */
-    padding: 5px 10px;
-    /* Add padding for better appearance */
     text-shadow: 0px 2px 2px rgba(59, 240, 231, 0.5);
-    /* Add shadowing */
 }
 
 .carousel-text {
@@ -254,3 +275,26 @@ hr.hrlarge {
 .navbar-title .navbar-brand {
     margin-left: 28px;
 }
+
+.green-capsule label+select,
+.green-capsule label+select:active,
+.green-capsule label+select:hover,
+.green-capsule label+select:focus {
+    color: #212529;
+}
+
+.green-capsule select:focus {
+    outline: none;
+    border-color: transparent;
+}
+
+[data-tooltip]:hover::after {
+    display: block;
+    position: absolute;
+    content: attr(data-tooltip);
+    border: 3px solid #e0dac6;
+    border-radius: 10px;
+    background: #f7f0e0;
+    padding: .25em;
+    color: #16563b;
+  }

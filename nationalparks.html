@@ -45,13 +45,13 @@
     </header>
 
     <main class="flex-grow-1">
-        <div class="mountain-main">
+        <div class="mountain-main card-text">
             <section>
 
                 <!-- Prompt Section -->
-                <h5 class="text-center" id="helpText">How would you like to find your park?</h5>
+                <h5 class="text-center card-title" id="helpText">How would you like to find your park?</h5>
 
-                <div class="text-center">
+                <div class="text-center py-2">
                     <ul class="navbar-nav d-flex justify-content-center flex-wrap align-items-center">
                         <li>
                             <div class="btn rounded-button-green" id="btnStates">States</div>
@@ -63,17 +63,16 @@
                 <!-- Park Dropdown Lists -->
                 <div>
                     <div class="py-3 px-5 d-flex justify-content-center">
-                        <div id="locationSearchContainer" style="display: none;">
-                            <label for="locationSearch" class="px-2">Search By State:</label>
-                            <select name="searchByLocation" id="locationSearch">
-                            </select>
+                        <div id="locationSearchContainer" style="display: none;" class="green-capsule mb-3">
+                            <label for="locationSearch" class="text-white text-center">Search By State:</label>
+                            <select name="searchByLocation" id="locationSearch"></select>
                         </div>
 
-                        <div id="parkTypeSearchContainer" style="display: none;">
-                            <label for="parkTypeSearch" class="px-2">Search By Park Type:</label>
-                            <select name="searchByParkType" id="parkTypeSearch">
-                            </select>
+                        <div id="parkTypeSearchContainer" style="display: none;" class="green-capsule mb-3">
+                            <label for="parkTypeSearch" class="text-white text-center">Search By Category:</label>
+                            <select name="searchByParkType" id="parkTypeSearch"></select>
                         </div>
+
                     </div>
 
                     <!-- Park List -->
@@ -81,7 +80,7 @@
                         <div>
                             <div id="info" class="px-5">
                                 <p class="d-flex justify-content-center">Please choose an option from one of the
-                                    dropdowns</p>
+                                    dropdown</p>
                             </div>
                         </div>
                     </div>

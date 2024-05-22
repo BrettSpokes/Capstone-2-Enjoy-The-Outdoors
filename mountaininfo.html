@@ -44,26 +44,31 @@
 
     </header>
 
-    <main class="flex-grow-1">
-        <div class="mountain-main">
-                <section>
-                    <!-- Mountain Dropdown List -->
-                    <div>
-                        <div class="py-3 d-flex justify-content-center">
-                            <div class="green-capsule mb-3">
-                                <label for="mountainDropDown" class="text-white text-center">Mountains</label>
-                                <select name="mountains" id="mountainDropDown" class="form-control"></select>
-                            </div>
-                        </div>
-                        
-                        <!-- Mountain Info -->
-                        <div class="px-5 py-2">
-                            <div id="infoBlock">
-                                <p class="d-flex justify-content-center">Please select a mountain from the dropdown</p>
-                            </div>
+    <main class="flex-grow-1 ">
+        <div class="mountain-main card-text">
+            <section>
+
+                <!-- Prompt Section -->
+                <h5 class="text-center card-title" id="helpText">Let's enjoy a mountain view!</h5>
+
+
+                <!-- Mountain Dropdown List -->
+                <div>
+                    <div class="py-3 d-flex justify-content-center">
+                        <div id="mountainSearchContainer" style="display:block" class="green-capsule mb-3">
+                            <label for="mountainDropDown" class="text-white text-center">Mountains</label>
+                            <select name="mountains" id="mountainDropDown" class="form-control"></select>
                         </div>
                     </div>
-                </section>
+
+                    <!-- Mountain Info -->
+                    <div class="px-5 py-2">
+                        <div id="infoBlock">
+                            <p class="d-flex justify-content-center card-title">Please select a mountain from the dropdown</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
     <!-- Footer -->

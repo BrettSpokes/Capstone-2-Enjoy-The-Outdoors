@@ -33,26 +33,64 @@ MOUNTAINSEARCH.addEventListener("change", function () {
         let foundMountain = mountainsArray.find(mtn => mtn.name == selectedValue);
         let mountainSunInfo;
 
+        // Timeout duration in milliseconds
+        const timeoutDuration = 5000;
+        INFOBLOCK.innerHTML =
+                `
+                <div class="d-flex justify-content-center mb-4">
+                <img src="imgs/${foundMountain.img}" alt="${foundMountain.name}" class='drop-shadow-img' height=375px ">
+                </div>
+                <hr class="hrlarge my-5">
+                <h2 class="card-title">${foundMountain.name}</h2>
+                <p>${foundMountain.desc}</p>
+                <span>Elevation: ${foundMountain.elevation} ft.</span><br>
+                <span>Difficulty: ${foundMountain.effort}</span><br>
+                <span data-tooltip="Latitude and Longitude">Location: ${foundMountain.coords.lat}, ${foundMountain.coords.lng}</span><br>
+                <span>Sunrise and Sunset (UTC): Loading...</span>
+                <div class="img-pad "></div>`;
+
         // Fetch sunrise and sunset times for the mountain
-        getSunsetForMountain(foundMountain.coords.lat, foundMountain.coords.lng).then(data => {
+        Promise.race([
+            getSunsetForMountain(foundMountain.coords.lat, foundMountain.coords.lng),
+            new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), timeoutDuration))
+        ]).then(data => {
             mountainSunInfo = data.results;
             INFOBLOCK.innerHTML =
-                `<h2>${foundMountain.name}</h2>
-                <p>Description: ${foundMountain.desc}</p>
-                <p>Elevation: ${foundMountain.elevation} ft.</p>
-                <p>Difficulty: ${foundMountain.effort}</p>
-                <p>Sunrise and Sunset (UTC): ${mountainSunInfo.sunrise} & ${mountainSunInfo.sunset}</p>
-                <div class="d-flex justify-content-center">
-                <img src="imgs/${foundMountain.img}" alt="${foundMountain.name}" class='drop-shadow-img'">
+                `
+                <div class="d-flex justify-content-center mb-4">
+                <img src="imgs/${foundMountain.img}" alt="${foundMountain.name}" class='drop-shadow-img' height=375px ">
                 </div>
+                <hr class="hrlarge my-5">
+                <h2 class="card-title">${foundMountain.name}</h2>
+                <p>${foundMountain.desc}</p>
+                <span>Elevation: ${foundMountain.elevation} ft.</span><br>
+                <span>Difficulty: ${foundMountain.effort}</span><br>
+                <span data-tooltip="Latitude and Longitude">Location: ${foundMountain.coords.lat}, ${foundMountain.coords.lng}</span><br>
+                <span>Sunrise and Sunset (UTC): ${mountainSunInfo.sunrise} & ${mountainSunInfo.sunset}</span>
                 <div class="img-pad "></div>`;
         }).catch(error => {
-            INFOBLOCK.innerHTML = `<p>Error loading data. Please try again later.</p>`;
+            if (error.message === 'Timeout') {
+                INFOBLOCK.innerHTML =
+                `
+                <div class="d-flex justify-content-center mb-4">
+                <img src="imgs/${foundMountain.img}" alt="${foundMountain.name}" class='drop-shadow-img' height=375px ">
+                </div>
+                <hr class="hrlarge my-5">
+                <h2 class="card-title">${foundMountain.name}</h2>
+                <p>${foundMountain.desc}</p>
+                <span>Elevation: ${foundMountain.elevation} ft.</span><br>
+                <span>Difficulty: ${foundMountain.effort}</span><br>
+                <span data-tooltip="Latitude and Longitude">Location: ${foundMountain.coords.lat}, ${foundMountain.coords.lng}</span><br>
+                <span>Sunrise and Sunset (UTC): There was an issue loading this data; sorry for the inconvience!</span>
+                <div class="img-pad "></div>`;
+            } else {
+                INFOBLOCK.innerHTML = `<p>Error loading data. Please try again later.</p>`;
+            }
             console.error('Error fetching sunset data:', error);
         });
     } else {
         // Clear the info block if no mountain is selected
-        INFOBLOCK.innerHTML = `<p>Please select a mountain from the dropdown</p>`;
+        INFOBLOCK.innerHTML = `<p class="d-flex justify-content-center card-title">Please select a mountain from the dropdown</p>`;
     }
 });
 
