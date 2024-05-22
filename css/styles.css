@@ -1,3 +1,84 @@
+body,
+.navbar-brand,
+.card-title,
+.carousel-caption h5,
+footer p {
+    font-family: "Titan One", sans-serif;
+    font-style: normal;
+}
+
+body,
+footer {
+    background-color: #6eb192;
+}
+
+.footer-gradient {
+    background: linear-gradient(to bottom, #6eb192, #16563b);
+    /* Gradient background from bottom to top */
+}
+
+.navbar {
+    background-color: #16563b;
+}
+
+.nav-link {
+    color: #16563b !important;
+}
+
+
+.carousel-inner {
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(110, 177, 146, 1) 0%, rgba(255, 255, 255, 0) 1.5%, rgba(255, 255, 255, 0) 98%, rgba(110, 177, 146, 1) 100%);
+    pointer-events: none; /* Ensures clicks pass through overlay */
+}
+
+.carousel-inner img {
+    height: 26.65em;
+    object-fit: cover;
+}
+
+
+
+.card {
+    border: none;
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    background-color: #fbeedd;
+    /* Set background color */
+    border-radius: 0;
+    /* Remove rounded corners */
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+    /* Add drop shadow */
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-title,
+.card-text {
+    font-size: 1.1;
+    color: #1f6e41;
+    /* Set text color */
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
 main>.container {
     padding: 60px 15px 0;
     margin-bottom: 5rem;
@@ -8,4 +89,93 @@ main>.container {
     left: 0;
     bottom: 0;
     width: 100%;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+footer a:hover,
+footer a:visited {
+    color: #617991;
+    text-decoration: none;
+}
+
+.btn {
+    width: 125px;
+}
+
+@media (max-width: 765px) {
+    .btn {
+        width: 250px;
+    }
+}
+
+.btn.rounded-button {
+    background-color: #f7f0e0;
+    color: #16563b !important;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 5px;
+}
+
+.btn.rounded-button:hover {
+    background-color: #e0dac6;
+}
+
+
+.navbar-second {
+    background: linear-gradient(to bottom, #16563b, #6eb192);
+    /* Gradient background from top to bottom */
+}
+
+.navbar-second .navbar-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Keep the existing styles for the second navbar */
+.navbar-second .navbar-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Override the width of all buttons */
+.navbar-second .nav-link.btn {
+    width: auto;
+    /* Reset width */
+}
+
+
+.carousel-text,
+.navbar-brand {
+    text-decoration: none;
+    /* Remove default underline */
+    -webkit-text-stroke: 1px #223827;
+    /* Add outline using -webkit-text-stroke */
+    padding: 5px 10px;
+    /* Add padding for better appearance */
+}
+
+.navbar-brand {
+    font-size: 2.5em;
+    color: #f7f0e0 !important;
+    /* Set color for the anchor element */
+    text-decoration: none;
+    /* Remove default underline */
+    -webkit-text-stroke: 1px #18752c;
+    /* Add outline using -webkit-text-stroke */
+    padding: 5px 10px;
+    /* Add padding for better appearance */
+    text-shadow: 0px 2px 2px rgba(59, 240, 231, 0.5);
+    /* Add shadowing */
+}
+
+
+.carousel-text {
+    font-size: 1.5em;
 }

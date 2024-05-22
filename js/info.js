@@ -4,12 +4,11 @@
 const MOUNTAINSEARCH = document.getElementById('mountainDropDown');
 const INFOBLOCK = document.getElementById('infoBlock');
 
-// Execute this code when the window loads
+// Initialize the mountain dropdown
 window.onload = () => {
     initMountainDropdown();
 }
 
-// Initialize the mountain dropdown
 function initMountainDropdown() {
     // Create a placeholder option
     let placeHolder = new Option('Select One...', '');

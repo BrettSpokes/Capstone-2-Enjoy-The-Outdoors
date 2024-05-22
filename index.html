@@ -1,70 +1,114 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Title</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
-    <!-- Bootstrap CSS v5.2.1 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enjoy the Outdoors</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
-
+    <link rel="shortcut icon" href="imgs/icons8-sun-32.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
 </head>
 
-<body>
-    <header>
-        <!-- Nav Bar Start -->
-        <nav id="nav-example" class="nav justify-content-center fixed-top">
-            <a class="nav-link text-dark" href="index.html">Home</a>
-            <a class="nav-link text-dark" href="nationalparks.html">National Parks</a>
-            <a class="nav-link text-dark" href="mountaininfo.html">Mountains Info</a>
-        </nav>
-        <!-- Nav Bar End -->
-    </header>
+<body class="d-flex flex-column min-vh-100 bg-body">
     <main>
-        <div>
-            <div data-bs-spy="scroll" data-bs-target="#nav-example" data-bs-smooth-scroll="true" tabindex="0">
-                <div id="navban" class="bg-warning" style="height: 5vh">
-                    Welcome!
+        <!-- Navbar 1 (Title) -->
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-title">
+            <div class="container">
+                <div class="row w-100 justify-content-center">
+                    <div class="col-lg-6 text-center">
+                        <a class="navbar-brand" href="index.html">Enjoy the Outdoors</a>
+                    </div>
                 </div>
-                <div id="div1" class="bg-light" style="height: 50vh">
-                    div1
+            </div>
+        </nav>
+
+        <!-- Navbar 2 (Buttons) -->
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-second">
+            <div class="container">
+                <div class="row w-100 justify-content-center">
+                    <div class="col-lg-6 text-center">
+                        <ul class="navbar-nav d-flex justify-content-center flex-wrap align-items-center">
+                            <!-- Replaced anchor tags with divs -->
+                            <li>
+                                <div class="btn rounded-button">Home</div>
+                                <div class="btn rounded-button">Mountains</div>
+                                <div class="btn rounded-button">Parks</div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div id="div2" class="bg-success" style="height: 50vh">
-                    div2
+            </div>
+        </nav>
+
+        <!-- Carousel -->
+        <div id="natureCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                 <!-- New div for overlay -->
+                <div class="carousel-item active">
+                    <div class="overlay"></div>
+                    <img src="imgs/bannerlarge_optimized.png" class="d-block w-100" alt="Nature Scene">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 id="carousel-text">Welcome to your next outdoor adventure!</h5>
+                    </div>
                 </div>
-                <div id="div3" class="bg-dark" style="height: 50vh">
-                    div3
+            </div>
+        </div>
+
+        <!-- Cards Section -->
+        <div class="container mt-5 flex-grow-1 ">
+            <div class="row">
+                <div class="col-md-3 d-flex align-items-stretch">
+                    <div class="card text-center flex-fill">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Home and Gardens</h5>
+                            <p class="card-text">Explore beautiful gardens and home decorations inspired by nature.</p>
+                            <a href="#" class="btn btn-primary mt-auto">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 d-flex align-items-stretch">
+                    <div class="card text-center flex-fill">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Camping Tips</h5>
+                            <p class="card-text">Get the best tips for camping and enjoy your outdoor adventures.</p>
+                            <a href="#" class="btn btn-primary mt-auto">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 d-flex align-items-stretch">
+                    <div class="card text-center flex-fill">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Wildlife</h5>
+                            <p class="card-text">Discover the diverse wildlife in various natural habitats.</p>
+                            <a href="#" class="btn btn-primary mt-auto">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 d-flex align-items-stretch">
+                    <div class="card text-center flex-fill">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Conservation</h5>
+                            <p class="card-text">Learn about conservation efforts and how you can contribute.</p>
+                            <a href="#" class="btn btn-primary mt-auto">Learn More</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
-    
-    <footer>
-        <div class="d-flex flex-column h-100">
-            <div class="flex-shrink-0 container">
-                    <h1 class="mt-5">Template with dark fixed navbar and sticky footer</h1>
-                    <p class="lead">Pin a footer to the bottom of the viewport in desktop browsers with this custom HTML
-                        and CSS. A fixed navbar has been added with padding-top: 60px; on the main > .container.</p>
-            </div>
-            <div class="footer mt-auto py-3 bg-light sticky-footer container-fluid text-center">
-                    <span class="text-muted">Place sticky footer content here.</span>
-            </div>
-        </div>
+    <!-- Footer -->
+    <footer class="footer-gradient text-white text-center py-3 mt-5 bg-footer">
+        <p>&copy; 2024 Enjoy the Outdoors. All rights reserved. <a target="_blank"
+                href="https://icons8.com/icon/qDq0zUBkJkzp/sun">Sun</a> icon by <a target="_blank"
+                href="https://icons8.com">Icons8</a></p>
     </footer>
-</html>
-</footer>
-<!-- Bootstrap JavaScript Libraries -->
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-    crossorigin="anonymous"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-    crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/navigation.js"></script>
 </body>
 
 </html>

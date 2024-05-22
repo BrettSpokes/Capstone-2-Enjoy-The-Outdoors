@@ -1,5 +1,6 @@
 "use strict"
 
+// Get references to the dropdown and info block elements
 const LOCATIONSEARCH = document.getElementById("locationSearch");
 const PARKTYPESEARCH = document.getElementById("parkTypeSearch");
 const INFOBLOCK = document.getElementById("info");
