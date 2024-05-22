@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     window.location.href = 'nationalparks.html';
                     break;
                 default:
-                    console.log("Button clicked: " + buttonText);
                     break;
             }
         });

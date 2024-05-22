@@ -1,13 +1,128 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enjoy the Outdoors</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" href="imgs/icons8-sun-32.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
+</head>
+
+<body class="d-flex flex-column min-vh-100 bg-body">
+    <header>
+
+        <!-- Navbar 1 (Title) -->
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-title">
+            <div class="container">
+                <div class="row w-100 justify-content-center">
+                    <div class="text-center">
+                        <a class="navbar-brand" href="index.html">Enjoy the Outdoors</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Navbar 2 (Buttons) -->
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-second">
+            <div class="container">
+                <div class="row w-100 justify-content-center">
+                    <div class="text-center">
+                        <ul class="navbar-nav d-flex justify-content-center flex-wrap align-items-center">
+                            <li>
+                                <div class="btn rounded-button">Home</div>
+                                <div class="btn rounded-button">Mountains</div>
+                                <div class="btn rounded-button">Parks</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <main class="flex-grow-1">
+        <div class="mountain-main">
+            <section>
+
+                <!-- Prompt Section -->
+                <h5 class="text-center" id="helpText">How would you like to find your park?</h5>
+
+                <div class="text-center">
+                    <ul class="navbar-nav d-flex justify-content-center flex-wrap align-items-center">
+                        <li>
+                            <div class="btn rounded-button-green" id="btnStates">States</div>
+                            <div class="btn rounded-button-green" id="btnCategory">Category</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Park Dropdown Lists -->
+                <div>
+                    <div class="py-3 px-5 d-flex justify-content-center">
+                        <div id="locationSearchContainer" style="display: none;">
+                            <label for="locationSearch" class="px-2">Search By State:</label>
+                            <select name="searchByLocation" id="locationSearch">
+                            </select>
+                        </div>
+
+                        <div id="parkTypeSearchContainer" style="display: none;">
+                            <label for="parkTypeSearch" class="px-2">Search By Park Type:</label>
+                            <select name="searchByParkType" id="parkTypeSearch">
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Park List -->
+                    <div class="px-5 py-2" id="parkResultList" style="display: none;">
+                        <div>
+                            <div id="info" class="px-5">
+                                <p class="d-flex justify-content-center">Please choose an option from one of the
+                                    dropdowns</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="footer-gradient text-white text-center py-3 mt-5 bg-footer">
+        <p>&copy; 2024 Enjoy the Outdoors. All rights reserved. <a target="_blank"
+                href="https://icons8.com/icon/qDq0zUBkJkzp/sun">Sun</a> icon by <a target="_blank"
+                href="https://icons8.com">Icons8</a></p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="js/navigation.js"></script>
+    <!-- Park Search Scripts -->
+    <script src="js/data/location-data.js"></script>
+    <script src="js/data/parktype-data.js"></script>
+    <script src="js/data/nationalpark-data.js"></script>
+    <script src="js/park.js"></script>
+
+</body>
+
+</html>
+
+
+<!-- <!doctype html>
 <html lang="en">
 
 <head>
     <title>Title</title>
-    <!-- Required meta tags -->
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <!-- Bootstrap CSS v5.2.1 -->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/styles.css">
@@ -16,13 +131,13 @@
 
 <body>
     <header>
-        <!-- Nav Bar Start -->
+
         <nav id="nav-example" class="nav justify-content-center fixed-top">
             <a class="nav-link text-dark" href="index.html">Home</a>
             <a class="nav-link text-dark" href="nationalparks.html">National Parks</a>
             <a class="nav-link text-dark" href="mountaininfo.html">Mountains Info</a>
         </nav>
-        <!-- Nav Bar End -->
+
     </header>
     <main>
         <div id="navban" class="bg-warning" style="height: 5vh">
@@ -31,24 +146,20 @@
 
 
         <div class="py-3 px-5 d-flex justify-content-center">
-            <!-- Search By Location Start -->
+
             <label for="locationSearch" class="px-2">Search By State:</label>
             <select name="searchByLocation" id="locationSearch">
             </select>
-            <!-- Search By Location End-->
 
-            <!-- Search By Park Type Start -->
             <label for="parkTypeSearch" class="px-2">Search By Park Type:</label>
             <select name="searchByParkType" id="parkTypeSearch">
             </select>
-            <!-- Search By Park Type End-->
+
         </div>
 
-        <!-- Park Details Display Start -->
         <div>
             <div id="info" class="px-5"></div>
         </div>
-        <!-- Park Details Display End -->
 
     
 
@@ -68,7 +179,6 @@
 
 </html>
 </footer>
-<!-- Bootstrap JavaScript Libraries -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
     crossorigin="anonymous"></script>
@@ -77,13 +187,11 @@
     integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
     crossorigin="anonymous"></script>
 
-<!-- Load Data -->
 <script src="js/data/location-data.js"></script>
 <script src="js/data/parktype-data.js"></script>
 <script src="js/data/nationalpark-data.js"></script>
-<!-- Load Functions -->
 <script src="js/park.js"></script>
 
 </body>
 
-</html>
+</html> -->

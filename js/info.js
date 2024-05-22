@@ -39,7 +39,7 @@ MOUNTAINSEARCH.addEventListener("change", function () {
             INFOBLOCK.innerHTML =
                 `<h2>${foundMountain.name}</h2>
                 <p>Description: ${foundMountain.desc}</p>
-                <p>Elevation: ${foundMountain.elevation}</p>
+                <p>Elevation: ${foundMountain.elevation} ft.</p>
                 <p>Difficulty: ${foundMountain.effort}</p>
                 <p>Sunrise and Sunset (UTC): ${mountainSunInfo.sunrise} & ${mountainSunInfo.sunset}</p>
                 <div class="d-flex justify-content-center">
