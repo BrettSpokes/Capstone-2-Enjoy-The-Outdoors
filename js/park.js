@@ -113,7 +113,7 @@ function populateList(inArray) {
     let infoHtml = '';
 
     inArray.forEach(foundpark => {
-        infoHtml += `<h2 class="card-title">${foundpark.LocationName}</h2>
+        infoHtml += `<h2 class="card-title park-title">${foundpark.LocationName}</h2>
             <p>Park ID: ${foundpark.LocationID}</p>`;
         
         infoHtml += foundpark.Address ? `<span>Address: ${foundpark.Address}</span>` : '';

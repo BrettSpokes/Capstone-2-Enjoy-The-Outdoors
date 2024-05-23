@@ -60,54 +60,51 @@
                 </div>
             </div>
         </section>
-        <!-- Cards Section -->
+
+        <p class="text-white welcome-blurb px-4 mx-4 pt-4">Where adventure awaits and memories are made, welcome to Enjoy the Outdoors – your gateway to nature's wonders! Step into a world of exploration, where every trail leads to new discoveries and every vista inspires awe. Whether you're soaring high on majestic mountains or wandering through lush green parks, there's something here for everyone!</p>
+
+        <p class="text-white welcome-blurb px-4 mx-4">Our website is more than just a virtual guide – it's a digital compass guiding you towards unforgettable experiences. From the towering peaks of the mountains to the tranquil beauty of parks, we provide everything you need to plan your next outdoor escapade.</p>
+        <p class="text-white welcome-blurb px-4 mx-4">Check out some of our parks and mountains below. You better act quick if you see something you like, because we have lots to show you! We will be sure to have something else next time you come around!</p>
+       
+        <section class="pt-3">
+            <div class="hr-with-text">
+                <hr>
+                <div class="text-center"><a href="nationalparks.html" class="text-white divider-text text-center">Parks A Plenty!</a></div>
+            </div>
+        </section>
+
         <section>
-            <div class="container mt-5 flex-grow-1 ">
-                <div class="row">
-                    <div class="col-md-3 d-flex align-items-stretch">
-                        <div class="card text-center flex-fill">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title">Home and Gardens</h5>
-                                <p class="card-text">Explore beautiful gardens and home decorations inspired by nature.
-                                </p>
-                                <a href="#" class="btn mt-auto link-btn">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 d-flex align-items-stretch">
-                        <div class="card text-center flex-fill">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title">Camping Tips</h5>
-                                <p class="card-text">Get the best tips for camping and enjoy your outdoor adventures.
-                                </p>
-                                <a href="#" class="btn mt-auto link-btn">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 d-flex align-items-stretch">
-                        <div class="card text-center flex-fill">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title">Wildlife</h5>
-                                <p class="card-text">Discover the diverse wildlife in various natural habitats.</p>
-                                <a href="#" class="btn mt-auto link-btn">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 d-flex align-items-stretch">
-                        <div class="card text-center flex-fill">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title">Conservation</h5>
-                                <p class="card-text">Learn about conservation efforts and how you can contribute.</p>
-                                <a href="#" class="btn mt-auto link-btn">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
+            <div class="container pt-1 flex-grow-1">
+                <div class="row" id="imagePreviewParks">
+                    <!-- Random park cards will be inserted here -->
                 </div>
+            </div>            
+        </section>
+
+        <section class="pt-3">
+            <div class="hr-with-text">
+                <hr>
+                <div class="text-center"><a href="mountaininfo.html" class="text-white divider-text text-center">Majestic Mountains!</a></div>
+            </div>
+        </section>
+
+        <!-- Cards Section Mountains -->
+        <section>
+            <div class="container pt-1 flex-grow-1">
+                <div class="row" id="imagePreviewRow">
+                    <!-- Random mountain cards will be inserted here -->
+                </div>
+            </div>            
+        </section>
+
+        <section>
+            <div class="hr-with-text">
+                <hr>
             </div>
         </section>
     </main>
     <!-- Footer -->
-    <footer class="footer-gradient  text-white text-center py-3 mt-5 bg-footer">
+    <footer class="footer-gradient text-white text-center py-3 mt-2 bg-footer">
         <p>&copy; 2024 Enjoy the Outdoors. All rights reserved. <a target="_blank"
                 href="https://icons8.com/icon/qDq0zUBkJkzp/sun">Sun</a> icon by <a target="_blank"
                 href="https://icons8.com">Icons8</a></p>
@@ -116,7 +113,15 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- Data Scripts -->
+    <script src="js/data/nationalpark-data.js"></script>
+    <script src="js/data/mountain-data.js"></script>
+
     <script src="js/navigation.js"></script>
+
+    
+
 </body>
 
 </html>

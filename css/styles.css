@@ -70,22 +70,43 @@ footer {
 .card-title,
 .card-text {
     font-size: 1.1;
+    flex-grow: 1;
     /* Set text color */
 }
 
-.card-title{
+.card-title {
     color: #1f6e41;
+    height: 3em;
+    /* Adjust as needed for your design */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
 }
 
 .card-text {
     color: #1f6e41b7;
 }
 
+.park-title{
+    font-size: 3vw;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+@media screen and (min-width: 1200px) {
+    .park-title {
+       font-size: 36px;
+    }
+  }
+
 .card-body {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    height: 100%;
 }
 
 main>.container {
@@ -138,7 +159,7 @@ footer a:focus {
 .link-btn {
     background-color: #1f6e41;
     color: #fff;
-    
+
     border-color: #e0dac6;
     border-width: 1px;
 
@@ -169,18 +190,18 @@ footer a:focus {
 .btn.rounded-button-green {
     border: none;
     border-radius: 20px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     margin: 5px;
 }
 
 .btn.rounded-button {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     background-color: #f7f0e0;
-    color: #16563b ;
+    color: #16563b;
 }
 
 .btn.rounded-button-green {
     background-color: #16563b;
-    color: #fff ;
+    color: #fff;
 }
 
 .btn.rounded-button:hover {
@@ -189,7 +210,7 @@ footer a:focus {
 
 .btn.rounded-button-green:hover {
     background-color: rgb(15, 61, 43);
-    color: #fff ;
+    color: #fff;
 }
 
 hr.hrlarge {
@@ -225,7 +246,9 @@ hr.hrlarge {
 
 
 .carousel-text,
-.navbar-brand {
+.navbar-brand,
+.divider-text, 
+.welcome-blurb {
     text-decoration: none;
     /* Remove default underline */
     -webkit-text-stroke: 1px hsl(188, 33%, 38%);
@@ -233,6 +256,14 @@ hr.hrlarge {
     text-shadow: 0px 2px 2px rgba(64, 158, 106, 0.9);
     padding: 5px 10px;
     /* Add padding for better appearance */
+}
+
+.divider-text {
+    font-size: 1.5em;
+}
+
+.welcome-blurb{
+    font-size: 1.2em;
 }
 
 .navbar-brand {
@@ -288,6 +319,20 @@ hr.hrlarge {
     border-color: transparent;
 }
 
+.hr-with-text {
+    position: relative;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.hr-with-text hr {
+    border: 4px solid #e0dac6;
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+    width: 90%;
+
+}
+
 [data-tooltip]:hover::after {
     display: block;
     position: absolute;
@@ -297,4 +342,4 @@ hr.hrlarge {
     background: #f7f0e0;
     padding: .25em;
     color: #16563b;
-  }
+}
