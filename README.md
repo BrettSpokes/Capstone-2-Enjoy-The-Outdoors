@@ -11,19 +11,16 @@ Parks - Features two buttons to filter by either type of park, or the state the 
 # Home
 <p>
 <img src="imgs\readme-imgs\Home1.jpg" alt="Home Page" width="738">
-<img src="imgs\readme-imgs\Home2.jpg" alt="Home Page" width="375">
 </p>
 
 # Mountains
 <p>
 <img src="imgs\readme-imgs\Mountain1.jpg" alt="Mountain Page" width="738">
-<img src="imgs\readme-imgs\Mountain2.jpg" alt="Mountain Page" width="375">
 </p>
 
 # Parks
 <p>
 <img src="imgs\readme-imgs\Park1.jpg" alt="Park Page" width="738">
-<img src="imgs\readme-imgs\Park2.jpg" alt="Park Page" width="375">
 </p>
 
 # Interesting Script
