@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Function to get 4 random elements from an array
+    // Function to get random elements from an array
     function getRandomElements(arr, num) {
         const shuffled = arr.slice();
         let i = arr.length;

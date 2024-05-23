@@ -25,7 +25,7 @@ function initMountainDropdown() {
 }
 
 MOUNTAINSEARCH.addEventListener("change", handleMountainSearchChange);
-// Event listener for dropdown change
+
 // Function to handle mountain search change
 function handleMountainSearchChange() {
     if (this.value) {
