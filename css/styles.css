@@ -7,6 +7,7 @@ footer p {
     font-style: normal;
 }
 
+/* Remove Scroll */
 body::-webkit-scrollbar {
     display: none;
 }
@@ -18,7 +19,6 @@ footer {
 
 .footer-gradient {
     background: linear-gradient(to bottom, #6eb192, #16563b);
-    /* Gradient background from bottom to top */
 }
 
 .navbar {
@@ -33,6 +33,7 @@ footer {
     position: relative;
 }
 
+/* To add gradient over homepage hero image */
 .overlay {
     position: absolute;
     top: 0;
@@ -41,7 +42,6 @@ footer {
     height: 100%;
     background: linear-gradient(to bottom, rgba(110, 177, 146, 1) 0%, rgba(255, 255, 255, 0) 1.5%, rgba(255, 255, 255, 0) 98%, rgba(110, 177, 146, 1) 100%);
     pointer-events: none;
-    /* Ensures clicks pass through overlay */
 }
 
 .carousel-inner img {
@@ -56,11 +56,8 @@ footer {
     display: flex;
     flex-direction: column;
     background-color: #fbeedd;
-    /* Set background color */
     border-radius: 0;
-    /* Remove rounded corners */
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
-    /* Add drop shadow */
 }
 
 .card:hover {
@@ -69,15 +66,12 @@ footer {
 
 .card-title,
 .card-text {
-    font-size: 1.1;
     flex-grow: 1;
-    /* Set text color */
 }
 
 .card-title {
     color: #1f6e41;
     height: 3em;
-    /* Adjust as needed for your design */
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -116,14 +110,10 @@ main>.container {
 
 .mountain-main {
     background-color: rgb(245, 240, 226);
-    /* Translucent beige background */
     padding: 20px;
-    /* Padding on the sides */
     min-height: 60vh;
-    /* Minimum height */
     margin: 0 auto;
     margin-top: 1em;
-    /* Optional: Add margin for spacing around the main section */
     border-radius: 75px;
     max-width: 800px;
     width: 95%;
@@ -169,7 +159,6 @@ footer a:focus {
     background-color: #16563b;
     border-color: #e0dac6;
     color: #aaa;
-    /* Darker shade of green on hover */
 }
 
 .img-pad {
@@ -222,7 +211,6 @@ hr.hrlarge {
 
 .navbar-second {
     background: linear-gradient(to bottom, #16563b, #6eb192);
-    /* Gradient background from top to bottom */
 }
 
 .navbar-second .navbar-nav {
@@ -231,17 +219,14 @@ hr.hrlarge {
     align-items: center;
 }
 
-/* Keep the existing styles for the second navbar */
 .navbar-second .navbar-nav {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Override the width of all buttons */
 .navbar-second .nav-link.btn {
     width: auto;
-    /* Reset width */
 }
 
 
@@ -250,12 +235,9 @@ hr.hrlarge {
 .divider-text, 
 .welcome-blurb {
     text-decoration: none;
-    /* Remove default underline */
     -webkit-text-stroke: 1px hsl(188, 33%, 38%);
-    /* Add outline using -webkit-text-stroke */
     text-shadow: 0px 2px 2px rgba(64, 158, 106, 0.9);
     padding: 5px 10px;
-    /* Add padding for better appearance */
 }
 
 .divider-text {
@@ -333,6 +315,43 @@ hr.hrlarge {
 
 }
 
+.adjusting-padding{
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+
+@media (max-width: 450px) {
+    .navbar-brand{
+        font-size:1.5em;
+    }
+    
+    .bg-footer{
+        font-size: .8em;
+    }
+
+    .card-title{
+        font-size: 1em;
+    }
+
+    .btn {
+        width: 150px;
+    }
+
+    .rounded-button-green {
+        width: 150px;
+    }
+
+    .park-title{
+        padding-bottom: 100px;
+    }
+
+    .adjusting-padding{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+  }
+
+/* Used for creating a tooltip on the mountains page for the Lat and Long */
 [data-tooltip]:hover::after {
     display: block;
     position: absolute;

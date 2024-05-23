@@ -77,13 +77,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 <div class="card-body d-flex flex-column">`
 
                 parkCard += `<h5 class="card-title">${park.LocationName}</h5>`
-                parkCard += `<p>`
+                parkCard += `<p class="card-text">`
                 parkCard += park.Address ? `${park.Address} ` : '';
                 parkCard += park.City ? ` ${park.City}, ` : '';
                 parkCard += park.State ? `${park.State} ` : '';
                 parkCard += park.ZipCode ? `${park.ZipCode}` : '';
                 parkCard += `</p>`;
-                parkCard += `<a href="nationalparks.html?key2=${park.LocationID}" class="btn mt-auto link-btn">Learn More</a>`;
+                parkCard += `<a href="nationalparks.html?key2=${park.LocationID}" class="btn mt-auto link-btn">Find A Park</a>`;
                 parkCard += `</div></div></div>`;
 
                 IMAGEPREVIEWROW.insertAdjacentHTML('beforeend', parkCard);

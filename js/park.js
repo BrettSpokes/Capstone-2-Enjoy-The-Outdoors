@@ -24,7 +24,6 @@ window.onload = () => {
 }
 
 // Get the dropdown element and reference the corresponding data array and populate lists
-// initalize State Dropdown
 function initStateDropdown() {
     let placeHolder = new Option('Select One...', '');
     LOCATIONSEARCH.appendChild(placeHolder);
@@ -52,6 +51,7 @@ function initTypeDropdown() {
     PARKTYPESEARCH.appendChild(placeHolderAll);
 }
 
+// Display appropriate dropdown based off of selection and hide the other
 function displayListElements(type) {
     const lsc = document.getElementById('locationSearchContainer');
     const ptsc = document.getElementById('parkTypeSearchContainer');
@@ -108,6 +108,7 @@ document.getElementById("parkTypeSearch").addEventListener("change", function ()
     LOCATIONSEARCH.value = '';
 });
 
+//Populate the list and exclude properties that aren't valid
 function populateList(inArray) {
     INFOBLOCK.innerHTML = '';
     let infoHtml = '';

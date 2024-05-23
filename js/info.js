@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 // Get references to the dropdown and info block elements
 const MOUNTAINSEARCH = document.getElementById('mountainDropDown');
