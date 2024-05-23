@@ -36,17 +36,7 @@ MOUNTAINSEARCH.addEventListener("change", function () {
         // Timeout duration in milliseconds
         const timeoutDuration = 5000;
         INFOBLOCK.innerHTML =
-                `
-                <div class="d-flex justify-content-center mb-4">
-                <img src="imgs/${foundMountain.img}" alt="${foundMountain.name}" class='drop-shadow-img' height=375px ">
-                </div>
-                <hr class="hrlarge my-5">
-                <h2 class="card-title">${foundMountain.name}</h2>
-                <p>${foundMountain.desc}</p>
-                <span>Elevation: ${foundMountain.elevation} ft.</span><br>
-                <span>Difficulty: ${foundMountain.effort}</span><br>
-                <span data-tooltip="Latitude and Longitude">Location: ${foundMountain.coords.lat}, ${foundMountain.coords.lng}</span><br>
-                <span>Sunrise and Sunset (UTC): Loading...</span>
+                `${getBlurbMain(foundMountain)}<span>Sunrise and Sunset (UTC): Loading...</span>
                 <div class="img-pad "></div>`;
 
         // Fetch sunrise and sunset times for the mountain
@@ -57,31 +47,13 @@ MOUNTAINSEARCH.addEventListener("change", function () {
             mountainSunInfo = data.results;
             INFOBLOCK.innerHTML =
                 `
-                <div class="d-flex justify-content-center mb-4">
-                <img src="imgs/${foundMountain.img}" alt="${foundMountain.name}" class='drop-shadow-img' height=375px ">
-                </div>
-                <hr class="hrlarge my-5">
-                <h2 class="card-title">${foundMountain.name}</h2>
-                <p>${foundMountain.desc}</p>
-                <span>Elevation: ${foundMountain.elevation} ft.</span><br>
-                <span>Difficulty: ${foundMountain.effort}</span><br>
-                <span data-tooltip="Latitude and Longitude">Location: ${foundMountain.coords.lat}, ${foundMountain.coords.lng}</span><br>
-                <span>Sunrise and Sunset (UTC): ${mountainSunInfo.sunrise} & ${mountainSunInfo.sunset}</span>
+                ${getBlurbMain(foundMountain)}<span>Sunrise and Sunset (UTC): ${mountainSunInfo.sunrise} & ${mountainSunInfo.sunset}</span>
                 <div class="img-pad "></div>`;
         }).catch(error => {
             if (error.message === 'Timeout') {
                 INFOBLOCK.innerHTML =
                 `
-                <div class="d-flex justify-content-center mb-4">
-                <img src="imgs/${foundMountain.img}" alt="${foundMountain.name}" class='drop-shadow-img' height=375px ">
-                </div>
-                <hr class="hrlarge my-5">
-                <h2 class="card-title">${foundMountain.name}</h2>
-                <p>${foundMountain.desc}</p>
-                <span>Elevation: ${foundMountain.elevation} ft.</span><br>
-                <span>Difficulty: ${foundMountain.effort}</span><br>
-                <span data-tooltip="Latitude and Longitude">Location: ${foundMountain.coords.lat}, ${foundMountain.coords.lng}</span><br>
-                <span>Sunrise and Sunset (UTC): There was an issue loading this data; sorry for the inconvience!</span>
+                ${getBlurbMain(foundMountain)}<span>Sunrise and Sunset (UTC): There was an issue loading this data; sorry for the inconvience!</span>
                 <div class="img-pad "></div>`;
             } else {
                 INFOBLOCK.innerHTML = `<p>Error loading data. Please try again later.</p>`;
@@ -108,5 +80,13 @@ async function getSunsetForMountain(lat, lng) {
 }
 
 function getBlurbMain(mountainInfo){
-
+    return `<div class="d-flex justify-content-center mb-4">
+    <img src="imgs/${mountainInfo.img}" alt="${mountainInfo.name}" class='drop-shadow-img' height=375px ">
+    </div>
+    <hr class="hrlarge my-5">
+    <h2 class="card-title">${mountainInfo.name}</h2>
+    <p>${mountainInfo.desc}</p>
+    <span>Elevation: ${mountainInfo.elevation} ft.</span><br>
+    <span>Difficulty: ${mountainInfo.effort}</span><br>
+    <span data-tooltip="Latitude and Longitude">Location: ${mountainInfo.coords.lat}, ${mountainInfo.coords.lng}</span><br>`
 }
