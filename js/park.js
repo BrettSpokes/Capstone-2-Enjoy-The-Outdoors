@@ -62,13 +62,13 @@ function displayListElements(type) {
 
     switch (type) {
         case "state":
-            ht.innerText = "Please use the dropdown to find your park";
+            ht.innerText = "Select a state to find your park";
             lsc.style.display = "";
             prl.style.display = "";
             ptsc.style.display = "none";
             break;
         case "category":
-            ht.innerText = "Please use the dropdown to find your park";
+            ht.innerText = "Select a category to find your park";
             lsc.style.display = "none";
             ptsc.style.display = "";
             prl.style.display = "";
@@ -108,48 +108,37 @@ document.getElementById("parkTypeSearch").addEventListener("change", function ()
     LOCATIONSEARCH.value = '';
 });
 
-function populateList(inArray){
+function populateList(inArray) {
+    INFOBLOCK.innerHTML = '';
+    let infoHtml = '';
 
-    INFOBLOCK.innerHTML = ``;
-        let infoHtml = '';
+    inArray.forEach(foundpark => {
+        infoHtml += `<h2 class="card-title">${foundpark.LocationName}</h2>
+            <p>Park ID: ${foundpark.LocationID}</p>`;
+        
+        infoHtml += foundpark.Address ? `<span>Address: ${foundpark.Address}</span>` : '';
+        infoHtml += foundpark.City ? `<span>${foundpark.City},</span>` : '';
+        infoHtml += foundpark.State ? `<span> ${foundpark.State}</span><br>` : '';
+        infoHtml += foundpark.ZipCode ? `<span>${foundpark.ZipCode}</span><br>` : '';
+        infoHtml += foundpark.Phone ? `<span>Phone: ${foundpark.Phone}</span><br>` : '';
+        infoHtml += foundpark.Fax ? `<span>Fax: ${foundpark.Fax}</span><br>` : '';
 
-        inArray.forEach(foundpark => {
-            if (foundpark.Visit) {
-                infoHtml +=
-                    `<h2 class="card-title">${foundpark.LocationName}</h2>
-            <p>Park ID: ${foundpark.LocationID}</p>
-            <span>Address: ${foundpark.Address}</span>
-            <span>${foundpark.City},</span>
-            <span>${foundpark.State}</span>
-            <span>${foundpark.ZipCode}</span><br>
-            <span>Phone:${foundpark.Phone}</span><br>
-            <span>Fax:${foundpark.Fax}</span>
-            <div id="visitButton" class="d-flex justify-content-center">
-                <a class="btn mt-auto link-btn" href="${foundpark.Visit}">
-                Visit Park Page!
-                </a>
-            </div>
-            <hr class="hrlarge">`;
-            }
-            else {
-                infoHtml +=
-                    `<h2 class="card-title">${foundpark.LocationName}</h2>
-            <p>Park ID: ${foundpark.LocationID}</p>
-            <span>Address: ${foundpark.Address}</span>
-            <span>${foundpark.City}</span>
-            <span>${foundpark.State}</span>
-            <span>${foundpark.ZipCode}</span><br>
-            <span>Phone: ${foundpark.Phone}</span><br>
-            <span>Fax: ${foundpark.Fax}</span>
-            <hr class="hrlarge">`;
-            }
-        });
-
-        // Remove the last <hr class="hrlarge">
-        if (infoHtml.endsWith('<hr class="hrlarge">')) {
-            infoHtml = infoHtml.slice(0, -20); // length of '<hr class="hrlarge">'
+        if (foundpark.Visit) {
+            infoHtml += `
+                <div id="visitButton" class="d-flex justify-content-center pt-2">
+                    <a class="btn mt-auto link-btn" href="${foundpark.Visit}">
+                    Visit Park Page!
+                    </a>
+                </div>`;
         }
+        
+        infoHtml += '<hr class="hrlarge">';
+    });
 
-        INFOBLOCK.innerHTML = infoHtml;
+    // Remove the last <hr class="hrlarge">
+    if (infoHtml.endsWith('<hr class="hrlarge">')) {
+        infoHtml = infoHtml.slice(0, -20); // length of '<hr class="hrlarge">'
+    }
 
+    INFOBLOCK.innerHTML = infoHtml;
 }

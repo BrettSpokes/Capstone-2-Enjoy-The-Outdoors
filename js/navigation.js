@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
         setInterval(() => {
             currentIndex = (currentIndex + 1) % phrases.length;
             carouselText.textContent = phrases[currentIndex];
-        }, 15000); // Change phrase every 15 seconds
+        }, 10000); // Change phrase every 10 seconds
     }
 
     const buttons = document.querySelectorAll('.btn');

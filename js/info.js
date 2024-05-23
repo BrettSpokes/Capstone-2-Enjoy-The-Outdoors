@@ -106,3 +106,7 @@ async function getSunsetForMountain(lat, lng) {
         throw error;
     }
 }
+
+function getBlurbMain(mountainInfo){
+
+}
