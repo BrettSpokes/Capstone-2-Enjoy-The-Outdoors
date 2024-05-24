@@ -117,8 +117,8 @@ function populateList(inArray) {
         infoHtml += `<h2 class="card-title park-title">${foundpark.LocationName}</h2>
             <p>Park ID: ${foundpark.LocationID}</p>`;
         
-        infoHtml += foundpark.Address ? `<span>Address: ${foundpark.Address}</span>` : '';
-        infoHtml += foundpark.City ? `<span>${foundpark.City},</span>` : '';
+        infoHtml += foundpark.Address ? `<span>Address: ${foundpark.Address}</span> ` : '';
+        infoHtml += foundpark.City ? `<span>${foundpark.City}, </span>` : '';
         infoHtml += foundpark.State ? `<span> ${foundpark.State}</span><br>` : '';
         infoHtml += foundpark.ZipCode ? `<span>${foundpark.ZipCode}</span><br>` : '';
         infoHtml += foundpark.Phone ? `<span>Phone: ${foundpark.Phone}</span><br>` : '';
